@@ -1,0 +1,64 @@
+body {
+    height: 100vh;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f2f2f;
+    height: calc(100vh - 60px);
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: rgb(85, 153, 205);
+}
+
+.Form h1 {
+    margin: 10px;
+    color: black;
+    font-size: 32px;
+}
+
+.Form input {
+    width: 80%;
+    margin: 5px 0;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.Form p {
+    color: rgb(0, 0, 0);
+    margin: 5px;
+}
+
+.Form p a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.Form p a {
+    color: rgb(0, 0, 0);
+}
+
+#registerForm {
+    display: none;
+}
+
+.errorInfo {
+    color: red !important;
+    margin: 5px;
+    display: none;
+}
