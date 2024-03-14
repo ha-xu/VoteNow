@@ -63,7 +63,7 @@ function TryLogin() {
                 //pop up success message
                 //window.alert('You have been logged in successfully');
                 //redirect to home page
-               window.location.href = 'home.html';
+               window.location.href = 'index.php';
                //add session
             }else{
                 document.getElementById('loginError').style.display = 'block';

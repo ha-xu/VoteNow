@@ -20,13 +20,14 @@ body {
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    background-color: rgb(85, 153, 205);
+    background-color: #4d4d4d;
 }
 
 .Form h1 {
-    margin: 10px;
-    color: black;
+    margin: 10px 10px 20px 10px;
+    color: white;
     font-size: 32px;
+    font-family: 'Josefin Sans-Bold', sans-serif;
 }
 
 .Form input {
@@ -37,11 +38,15 @@ body {
     border: none;
     outline: none;
     font-size: 16px;
+    font-family: 'Josefin Sans-Regular', sans-serif;
+
 }
 
 .Form p {
-    color: rgb(0, 0, 0);
+    color: white;
     margin: 5px;
+    font-family: 'Josefin Sans-Regular', sans-serif;
+
 }
 
 .Form p a:hover {
@@ -50,7 +55,7 @@ body {
 }
 
 .Form p a {
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 #registerForm {
@@ -63,6 +68,6 @@ body {
     display: none;
     background: #f74847;
     padding: 3px 5px;
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: 13px;
 }

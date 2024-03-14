@@ -17,6 +17,59 @@ header h1 {
     color: #ffffff;
     font-size: 24px;
     text-align: center;
+    font-family: 'Josefin Sans-Bold', sans-serif;
+
+}
+
+header #sidebarBack{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: ease-in-out 0.3s;
+}
+
+header #sidebar{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 300px;
+    height: 100%;
+    background-color: #4d4d4d;
+    transition: ease-in-out 0.3s;
+    z-index: 1;
+}
+
+#ConnectName{
+    right: 20px;
+    position: absolute;
+    color: #ffffff;
+    transition: ease-in-out 0.3s;
+    padding: 6px 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ConnectName img{
+    width: 30px;
+    height: 30px;
+}
+
+#ConnectName p{
+    margin: 0;
+    padding:0px 5px;
+    font-size: 18px;
+    font-family: 'Josefin Sans-Regular', sans-serif;
+}
+
+#ConnectName:hover{
+    background-color: #2e2e2e;
+    cursor: pointer;
+    padding: 6px 9px;
+    border-radius: 7px;
 }
 
 button {
@@ -29,7 +82,7 @@ button {
     color: #000000;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
     transition: ease-in-out 0.1s;
-    font-family: auto;
+    font-family: 'Josefin Sans-Bold', sans-serif;
 }
 
 button:hover {
@@ -41,14 +94,14 @@ button:hover {
 .buttons {
     background-color: #ffaf29;
     border: none;
-    padding: 4px 7px;
+    padding: 7px 7px 4px 7px;
     border-radius: 5px;
     margin: 10px;
-    font-size: 15px;
+    font-size: 18px;
     color: #000000;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
     transition: ease-in-out 0.1s;
-    font-family: auto;
+    font-family: 'Josefin Sans-Bold', sans-serif;
 }
 
 .buttons:hover {
@@ -62,4 +115,9 @@ button:hover {
 @font-face {
     font-family: "Josefin Sans-Bold";
     src: url( "../fonts/JosefinSans-Bold.ttf" );
+}
+
+@font-face {
+    font-family: "Josefin Sans-Regular";
+    src: url( "../fonts/JosefinSans-Regular.ttf" );
 }

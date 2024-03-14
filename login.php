@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 //read date from post
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -17,7 +20,6 @@ foreach ($data as $user) {
     if ($user['username'] == $username && $user['password'] == $password) {
         echo "success";
         //add session
-        session_start();
         $_SESSION['username'] = $username;
         exit();
     }
