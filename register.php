@@ -5,6 +5,10 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirmPassword'];
 
+if(empty($username) || empty($email) || empty($password) || empty($confirmPassword)) {
+    echo "All fields are required!";
+    exit();
+}
 
 if ($password != $confirmPassword) {
     echo "Passwords do not match!";
@@ -22,6 +26,10 @@ foreach ($data as $user) {
         echo "Username already exists!";
         exit();
     }
+    if ($user['email'] == $email) {
+        echo "Email already used! <br>Please use another email address.";
+        exit();
+    }
 }
 
 //add new user to array
@@ -31,4 +39,4 @@ $data[] = array('username' => $username, 'email' => $email, 'password' => $passw
 $newJsonString = json_encode($data);
 file_put_contents($jsonFile, $newJsonString);
 
-?>
+echo 'success';
