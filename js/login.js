@@ -55,7 +55,7 @@ function TryLogin() {
     // ajax sample
     $.ajax({
         type: "POST",
-        url: "login.php",
+        url: "../phps/login.php",
         data: { username: username, password: password },
         success: function(data) {
             console.log(data);
@@ -63,7 +63,7 @@ function TryLogin() {
                 //pop up success message
                 //window.alert('You have been logged in successfully');
                 //redirect to home page
-               window.location.href = 'index.php';
+               window.location.href = '../index.php';
                //add session
             }else{
                 document.getElementById('loginError').style.display = 'block';
@@ -88,7 +88,7 @@ function TryRegister() {
     // ajax sample
     $.ajax({
         type: "POST",
-        url: "register.php",
+        url: "../phps/register.php",
         data: { username: username, email: email, password: password, confirmPassword: confirmPassword },
         success: function(data) {
             console.log(data);

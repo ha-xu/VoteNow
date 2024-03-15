@@ -11,7 +11,7 @@ $password = $_POST['password'];
 
 
 //create or read jsonfile
-$jsonFile = 'users.json';
+$jsonFile = '../users.json';
 $jsonString = file_get_contents($jsonFile);
 $data = json_decode($jsonString, true);
 

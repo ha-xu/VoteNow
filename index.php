@@ -8,14 +8,16 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoteNow</title>
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/general.css">
+    <script src="js/home.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
     <header>
         <h1>Vote Now</h1>
-        <a id="ConnectName">
+        <a id="ConnectName" onclick="showSidebar()">
             <img src="images/user_48px.png"><p>
                 <?php
                 if (isset($_SESSION['username'])) {
@@ -25,9 +27,17 @@ session_start();
                 }
                 ?>
             </p></a>
-        <div id="sidebarBack">
-            <div id="sidebar">
-            </div>
+        
+        <div id="sidebarBack"></div>
+        <div id="sidebar">
+            <?php
+            if (isset($_SESSION["username"])) {
+                echo "<a id='logoutButton' class='sidebarButtons' onclick='logout()' ><p>Logout</p></a>";
+            } else {
+                echo "<a id='loginButton' class='sidebarButtons' href='login.html'><p>Login</p></a>";
+            }
+            ?>
+            
         </div>
     </header>
     <div id="main">
