@@ -18,22 +18,19 @@ session_start();
     <header>
         <a id="logoButton" href="index.php"><h1>Vote Now</h1></a>
         <a id="ConnectName" onclick="showSidebar()">
-            <img src="images/user_48px.png"><p>
+            <img src="images/user_48px.png">
                 <?php
                 if (isset($_SESSION['username'])) {
-                    echo $_SESSION['username'];
-                } else {
-                    echo "Not Connected";
-                }
+                    echo "<p id='usernamep'>".$_SESSION['username']."</p>";
+                } 
                 ?>
-            </p></a>
+            </a>
         
         <div id="sidebarBack"></div>
         <div id="sidebar">
-            <a class='sidebarButtons'> <p>My Polls</p></a>
-
             <?php
             if (isset($_SESSION["username"])) {
+                echo "<a class='sidebarButtons'> <p>My Polls</p></a>";
                 echo "<a id='logoutButton' class='sidebarButtons' onclick='logout()' ><p>Logout</p></a>";
             } else {
                 echo "<a id='loginButton' class='sidebarButtons' href='login.html'><p>Login</p></a>";
