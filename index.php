@@ -16,7 +16,7 @@ session_start();
 
 <body>
     <header>
-        <h1>Vote Now</h1>
+        <a id="logoButton" href="index.php"><h1>Vote Now</h1></a>
         <a id="ConnectName" onclick="showSidebar()">
             <img src="images/user_48px.png"><p>
                 <?php
@@ -50,18 +50,18 @@ session_start();
         <div id="Actions">
             <a id="createPollButton" class="actionButton" href="<?php
             if (isset($_SESSION['username'])) {
-                echo "createPoll.html";
+                echo "creerscrutin.html";
             } else {
-                echo "login.html?redirect=createPoll.html";
+                echo "login.html?redirect=creerscrutin.html";
             }
             ?>">
                 <p>Create a Poll (scrutin)</p>
             </a>
             <a id="voteButton" class="actionButton" href="<?php
             if (isset($_SESSION['username'])) {
-                echo "vote.html";
+                echo "voter.html";
             } else {
-                echo "login.html?redirect=vote.html";
+                echo "login.html?redirect=voter.html";
             }
             ?>">
                 <p>Vote for a Poll</p>

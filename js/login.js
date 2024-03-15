@@ -68,7 +68,7 @@ function TryLogin() {
                 //var lastPart = url.substr(url.lastIndexOf('/') + 1);
                 var urlParams = new URLSearchParams(window.location.search);
                 var redirecturl = urlParams.get('redirect');
-                if (redirecturl == null) {
+                if(redirecturl != 'creerscrutin.html' && redirecturl != 'voter.html'){
                     redirecturl = 'index.php';
                 }
                 //redirect to home page
