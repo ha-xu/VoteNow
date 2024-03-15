@@ -59,13 +59,22 @@ function TryLogin() {
         data: { username: username, password: password },
         success: function(data) {
             console.log(data);
-            if(data=='success'){
+            if (data == 'success') {
                 //pop up success message
                 //window.alert('You have been logged in successfully');
+                //get url info
+                var url = window.location.href;
+                //get last part of url
+                //var lastPart = url.substr(url.lastIndexOf('/') + 1);
+                var urlParams = new URLSearchParams(window.location.search);
+                var redirecturl = urlParams.get('redirect');
+                if (redirecturl == null) {
+                    redirecturl = 'index.php';
+                }
                 //redirect to home page
-               window.location.href = '../index.php';
-               //add session
-            }else{
+                window.location.href = '../' + redirecturl;
+                //add session
+            } else {
                 document.getElementById('loginError').style.display = 'block';
                 document.getElementById('loginError').innerHTML = data;
             }
@@ -92,14 +101,14 @@ function TryRegister() {
         data: { username: username, email: email, password: password, confirmPassword: confirmPassword },
         success: function(data) {
             console.log(data);
-            if(data=='success'){
+            if (data == 'success') {
                 //pop up success message
                 window.alert('You have been registered successfully');
                 //redirect to login page
                 ShowLoginForm();
                 ClearRegisterForm();
 
-            }else{
+            } else {
                 document.getElementById('registerError').style.display = 'block';
                 document.getElementById('registerError').innerHTML = data;
             }

@@ -52,7 +52,7 @@ session_start();
             if (isset($_SESSION['username'])) {
                 echo "createPoll.html";
             } else {
-                echo "login.html?=createPoll.html";
+                echo "login.html?redirect=createPoll.html";
             }
             ?>">
                 <p>Create a Poll (scrutin)</p>
@@ -61,7 +61,7 @@ session_start();
             if (isset($_SESSION['username'])) {
                 echo "vote.html";
             } else {
-                echo "login.html?=vote.html";
+                echo "login.html?redirect=vote.html";
             }
             ?>">
                 <p>Vote for a Poll</p>
