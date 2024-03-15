@@ -30,6 +30,8 @@ session_start();
         
         <div id="sidebarBack"></div>
         <div id="sidebar">
+            <a class='sidebarButtons'> <p>My Polls</p></a>
+
             <?php
             if (isset($_SESSION["username"])) {
                 echo "<a id='logoutButton' class='sidebarButtons' onclick='logout()' ><p>Logout</p></a>";
@@ -37,7 +39,7 @@ session_start();
                 echo "<a id='loginButton' class='sidebarButtons' href='login.html'><p>Login</p></a>";
             }
             ?>
-            
+            <a id="backButton" class='sidebarButtons' onclick="hideSidebar()"><p>Back</p></a>
         </div>
     </header>
     <div id="main">

@@ -45,7 +45,7 @@ header #sidebarBack{
 }
 
 header #sidebar{
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -300px;
     width: 300px;
@@ -60,6 +60,12 @@ header #sidebar{
     flex-direction: column;
     padding: 20px 10px;
     
+}
+
+@media screen and (max-width: 460px){
+    #sidebar{
+        width: calc(100% - 20px) !important;
+    }
 }
 
 .sidebarButtons{
@@ -86,6 +92,12 @@ header #sidebar{
 
 #logoutButton:hover{
     background-color: #d85b5b;
+}
+
+#backButton{
+    position: absolute;
+    bottom: 50px;
+    width: 100px;
 }
 
 #ConnectName{
