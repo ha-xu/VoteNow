@@ -8,3 +8,56 @@
     background-color: #454545;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
+
+#Inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.InputLine{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+    /* border: 1px solid #e6e6e6; */
+    border-radius: 10px;
+    background-color: #454545;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: fit-content;
+    padding: 10px;
+}
+
+.InputLine h2{
+    margin: 5px 10px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Josefin Sans-Bold', sans-serif;
+    white-space: nowrap;
+}
+
+.InputLine input,textarea{
+    width: 250px;
+    margin: 5px 10px;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Josefin Sans-Regular', sans-serif;
+    background-color: #e7e7e7;
+}
+
+.InputLine textarea{
+    width: 100%;
+    resize: vertical;
+}
+
+
+.multilines{
+    width: calc(100% - 40px) !important;
+}
