@@ -10,7 +10,7 @@ session_start();
     <title>VoteNow</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/general.css">
-    <script src="js/home.js"></script>
+    <script src="js/header.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -40,6 +40,7 @@ session_start();
         </div>
     </header>
     <div id="main">
+        <div id="content">
         <div id="introduction">
             <h1>Welcome to Vote Now</h1>
             <p>
@@ -49,23 +50,25 @@ session_start();
         <div id="Actions">
             <a id="createPollButton" class="actionButton" href="<?php
             if (isset($_SESSION['username'])) {
-                echo "creerscrutin.html";
+                echo "createPoll.php";
             } else {
-                echo "login.html?redirect=creerscrutin.html";
+                echo "login.html?redirect=createPoll.php";
             }
             ?>">
                 <p>Create a Poll (scrutin)</p>
             </a>
             <a id="voteButton" class="actionButton" href="<?php
             if (isset($_SESSION['username'])) {
-                echo "voter.html";
+                echo "vote.php";
             } else {
-                echo "login.html?redirect=voter.html";
+                echo "login.html?redirect=vote.php";
             }
             ?>">
                 <p>Vote for a Poll</p>
             </a>
         </div>
+        </div>
+       
     </div>
 </body>
 

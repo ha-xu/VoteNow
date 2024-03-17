@@ -1,6 +1,9 @@
 body {
     margin: 0;
     padding: 0;
+
+    background-color: #2f2f2f;
+
 }
 
 header {
@@ -166,6 +169,49 @@ button:hover {
     background-color: #e39d23;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+
+    max-width: 840px;
+}
+
+#introduction{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+    padding: 30px 0px;
+    width: 100%;
+    border-top: #707070 2px solid;
+    border-bottom: #707070 2px solid;
+}
+
+#introduction h1{
+    margin: 0;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 24px;
+    font-family: 'Josefin Sans-Bold', sans-serif;
+}
+
+#introduction p{
+    margin: 0;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Josefin Sans-Regular', sans-serif;
 }
 
 
