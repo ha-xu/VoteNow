@@ -27,7 +27,7 @@ body {
     margin: 10px 10px 20px 10px;
     color: white;
     font-size: 32px;
-    font-family: 'Josefin Sans-Bold', sans-serif;
+    font-family: 'Gabarito-Bold', sans-serif;
 }
 
 .Form input {
@@ -38,14 +38,14 @@ body {
     border: none;
     outline: none;
     font-size: 16px;
-    font-family: 'Josefin Sans-Regular', sans-serif;
+    font-family: 'Gabarito-Regular', sans-serif;
 
 }
 
 .Form p {
     color: white;
     margin: 5px;
-    font-family: 'Josefin Sans-Regular', sans-serif;
+    font-family: 'Gabarito-Regular', sans-serif;
 
 }
 

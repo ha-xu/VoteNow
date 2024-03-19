@@ -67,11 +67,50 @@ session_start();
                 </div>
                 <div class='InputLine multilines'>
                     <h2>Description</h2>
-                    <textarea type="text" rows="3"   id="description" placeholder="Enter your description here"></textarea>
+                    <textarea type="text" rows="3" id="description"
+                        placeholder="Enter your description here"></textarea>
                 </div>
-            </div>
-            <div class="QuestionBlock">
+                <div class='InputLine'>
+                    <h2>Ways of vote</h2>
 
+                    <div class="radioButtons">
+                        <div class="radioBlock" for="identified">
+                            <input type="radio" id="identified" name="waysOfVote" value="identified" checked>
+                            <label for="identified">Identified</label>
+                        </div>
+                        <div class="radioBlock">
+
+                            <input type="radio" id="anonymous" name="waysOfVote" value="anonymous">
+                            <label for="anonymous">Anonymous</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="QuestionBlock">
+                    <div class='InputLine multilines'>
+                        <h2>Question of the Poll</h2>
+                        <textarea type="text" rows="3" id="Qdescription"
+                            placeholder="Describe your question here"></textarea>
+                    </div>
+                    <div class="Indicator">
+                        <h2>Candidates</h2>
+                        <a id="addButton" class="buttons" onclick="addCandidate()">
+                            Add candidate
+                        </a>
+                    </div>
+                    <div class="CandidateBlock">
+
+                        <div class='InputLine'>
+                            <div style="display:flex;flex-wrap:nowrap;align-items:center;">
+                                <p class="LineNumber">1</p>
+                                <h2>Voting Candidate</h2>
+                            </div>
+                            <input type="text" id="organizer" placeholder="Enter the candidate here">
+                        </div>
+                        <a id="removeButton" onclick="removeCandidate()">
+                            <img src="images/close_96px.png">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

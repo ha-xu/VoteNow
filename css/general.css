@@ -29,7 +29,7 @@ header h1 {
     color: #ffffff;
     font-size: 24px;
     text-align: center;
-    font-family: 'Josefin Sans-Bold', sans-serif;
+    font-family: 'Gabarito-Bold', sans-serif;
 
 }
 
@@ -86,7 +86,7 @@ header #sidebar{
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
-    font-family: 'Josefin Sans-Bold', sans-serif;
+    font-family: 'Gabarito-Bold', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,7 +127,7 @@ header #sidebar{
     margin: 0;
     padding:0px 5px;
     font-size: 18px;
-    font-family: 'Josefin Sans-Regular', sans-serif;
+    font-family: 'Gabarito-Regular', sans-serif;
 }
 
 #ConnectName:hover{
@@ -147,7 +147,7 @@ button {
     color: #000000;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
     transition: ease-in-out 0.1s;
-    font-family: 'Josefin Sans-Bold', sans-serif;
+    font-family: 'Gabarito-Bold', sans-serif;
 }
 
 button:hover {
@@ -157,16 +157,17 @@ button:hover {
 }
 
 .buttons {
+    height: fit-content;
     background-color: #ffaf29;
     border: none;
-    padding: 7px 7px 4px 7px;
+    padding: 5px 7px 5px 7px;
     border-radius: 5px;
     margin: 10px;
     font-size: 18px;
     color: #000000;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-    transition: ease-in-out 0.1s;
-    font-family: 'Josefin Sans-Bold', sans-serif;
+    transition: ease-in-out 0.3s;
+    font-family: 'Gabarito-Bold', sans-serif;
 }
 
 .buttons:hover {
@@ -207,7 +208,7 @@ button:hover {
     padding: 10px;
     color: #ffffff;
     font-size: 24px;
-    font-family: 'Josefin Sans-Bold', sans-serif;
+    font-family: 'Gabarito-Bold', sans-serif;
 }
 
 #introduction p{
@@ -215,7 +216,7 @@ button:hover {
     padding: 10px;
     color: #ffffff;
     font-size: 18px;
-    font-family: 'Josefin Sans-Regular', sans-serif;
+    font-family: 'Gabarito-Regular', sans-serif;
 }
 
 
@@ -228,4 +229,15 @@ button:hover {
 @font-face {
     font-family: "Josefin Sans-Regular";
     src: url( "../fonts/JosefinSans-Regular.ttf" );
+}
+
+/* add font family */
+@font-face {
+    font-family: "Gabarito-Bold";
+    src: url( "../fonts/Gabarito-Bold.ttf" );
+}
+
+@font-face {
+    font-family: "Gabarito-Regular";
+    src: url( "../fonts/Gabarito-Regular.ttf" );
 }
