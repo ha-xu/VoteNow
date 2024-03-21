@@ -1,19 +1,31 @@
-
-
-#Inputs{
+#Inputs {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.InputLine{
+#Inputs button {
+    padding: 10px 15px;
+    background-color: #6cdb70;
+    border-radius: 8px;
+    font-size: 30px;
+    align-self: flex-end;
+    width: fit-content;
+    transition: ease-in-out 0.3s;
+}
+
+#Inputs button:hover {
+    background-color: #5d9d5d;
+    cursor: pointer;
+}
+
+.InputLine {
     margin-top: 20px;
     margin-bottom: 20px;
     /* padding: 10px; */
     /* border: 1px solid #e6e6e6; */
     border-radius: 10px;
     background-color: #454545;
-
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -23,7 +35,7 @@
     padding: 10px;
 }
 
-.InputLine h2{
+.InputLine h2 {
     margin: 5px 10px;
     color: white;
     font-size: 20px;
@@ -31,7 +43,8 @@
     white-space: nowrap;
 }
 
-.InputLine input,textarea{
+.InputLine input,
+textarea {
     width: 250px;
     margin: 5px 10px;
     padding: 8px 8px;
@@ -43,57 +56,54 @@
     background-color: #f1f1f1;
 }
 
-@media screen and (max-width: 460px){
-    .InputLine input,textarea{
+@media screen and (max-width: 460px) {
+    .InputLine input,
+    textarea {
         width: 100%;
     }
 }
 
-.InputLine textarea{
+.InputLine textarea {
     width: 100%;
     resize: vertical;
 }
 
-
-.multilines{
+.multilines {
     width: calc(100% - 40px) !important;
 }
 
-.radioBlock{
+.radioBlock {
     display: flex;
     align-items: center;
     margin: 5px 10px;
-
 }
 
-.radioBlock input{
+.radioBlock input {
     width: min-content;
     margin: 0px 10px 0px 0px;
 }
 
-.radioBlock label{
+.radioBlock label {
     color: white;
     font-size: 20px;
     font-family: 'Gabarito-Bold', sans-serif;
     cursor: pointer;
-    border-radius: 7px ;
+    border-radius: 7px;
     padding: 10px;
-
     background-color: #6a6a6a;
     transition: ease-in-out 0.3s;
 }
 
-.radioBlock label:hover{
+.radioBlock label:hover {
     background-color: #5a5a5a;
 }
 
-.radioButtons{
+.radioButtons {
     display: flex;
     flex-wrap: wrap;
 }
 
-.QuestionBlock{
-
+.QuestionBlock {
     width: calc(100% - 20px) !important;
     margin: 10px;
     /* margin-top: 20px;
@@ -105,7 +115,7 @@
     /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
 }
 
-.CandidateBlock{
+.CandidateBlock {
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -114,7 +124,16 @@
     place-content: space-between;
 }
 
-.CandidateBlock #removeButton{
+.VoterBlock {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    place-content: space-between;
+}
+
+.removeButton {
     display: flex;
     align-items: center;
     place-content: center;
@@ -123,21 +142,20 @@
     background-color: #454545;
     border-radius: 50%;
     transition: ease-in-out 0.3s;
-
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-.CandidateBlock #removeButton img{
+.removeButton img {
     width: 25px;
     height: 25px;
 }
 
-.CandidateBlock #removeButton:hover{
+.removeButton:hover {
     background-color: #e05a5a;
     cursor: pointer;
 }
 
-.Indicator{
+.Indicator {
     display: flex;
     place-content: space-between;
     align-items: center;
@@ -145,18 +163,18 @@
     border-bottom: #f1f1f1 2px solid;
 }
 
-.Indicator h2{
+.Indicator h2 {
     margin: 10px 0px;
     color: white;
     font-size: 27px;
     font-family: 'Gabarito-Bold', sans-serif;
 }
 
-.Indicator a{
+.Indicator a {
     margin-right: 0px !important;
 }
 
-.LineNumber{
+.LineNumber {
     color: white;
     text-align: center;
     min-width: 15px;
@@ -164,9 +182,7 @@
     padding: 6px 10px;
     border-radius: 10px;
     background-color: #6a6a6a;
-
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-
     font-size: 18px;
     font-family: 'Gabarito-Bold', sans-serif;
 }

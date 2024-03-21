@@ -11,6 +11,7 @@ session_start();
     <link rel="stylesheet" href="css/general.css">
     <script src="js/header.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/createPoll.js"></script>
     <link rel="stylesheet" href="css/createPoll.css">
 </head>
 
@@ -22,7 +23,7 @@ session_start();
         <a id="ConnectName" onclick="showSidebar()">
             <img src="images/user_48px.png">
             <?php
-            if (isset ($_SESSION['username'])) {
+            if (isset($_SESSION['username'])) {
                 echo "<p id='usernamep'>" . $_SESSION['username'] . "</p>";
             } else {
                 echo "<script>location.href='index.php'</script>";
@@ -34,7 +35,7 @@ session_start();
         <div id="sidebarBack"></div>
         <div id="sidebar">
             <?php
-            if (isset ($_SESSION["username"])) {
+            if (isset($_SESSION["username"])) {
                 echo "<a class='sidebarButtons'> <p>My Polls</p></a>";
                 echo "<a id='logoutButton' class='sidebarButtons' onclick='logout()' ><p>Logout</p></a>";
             } else {
@@ -56,19 +57,18 @@ session_start();
                     In this page you can create a poll. Then you can share it with your friends and see the results.
                 </p>
             </div>
-            <div id="Inputs">
+            <form id="Inputs" action="mypolls.php" method="post">
                 <div class='InputLine'>
                     <h2>Title of the Poll</h2>
-                    <input type="text" id="title" placeholder="Enter your title here">
+                    <input type="text" name="polltitle" placeholder="Enter your title here">
                 </div>
                 <div class='InputLine'>
                     <h2>Organizer/Group</h2>
-                    <input type="text" id="organizer" placeholder="Enter your organizer here">
+                    <input type="text" name="organizer" placeholder="Enter your organizer here">
                 </div>
                 <div class='InputLine multilines'>
                     <h2>Description</h2>
-                    <textarea type="text" rows="3" id="description"
-                        placeholder="Enter your description here"></textarea>
+                    <textarea type="text" rows="3" name="polldesc" placeholder="Enter your description here"></textarea>
                 </div>
                 <div class='InputLine'>
                     <h2>Ways of vote</h2>
@@ -88,8 +88,7 @@ session_start();
                 <div class="QuestionBlock">
                     <div class='InputLine multilines'>
                         <h2>Question of the Poll</h2>
-                        <textarea type="text" rows="3" id="Qdescription"
-                            placeholder="Describe your question here"></textarea>
+                        <textarea type="text" rows="3" name="pollQuestion" placeholder="Describe your question here"></textarea>
                     </div>
                     <div class="Indicator">
                         <h2>Candidates</h2>
@@ -97,21 +96,74 @@ session_start();
                             Add candidate
                         </a>
                     </div>
-                    <div class="CandidateBlock">
-
-                        <div class='InputLine'>
-                            <div style="display:flex;flex-wrap:nowrap;align-items:center;">
-                                <p class="LineNumber">1</p>
-                                <h2>Voting Candidate</h2>
+                    <div id="CandidatesList" style="margin-bottom:5px;">
+                        <div class="CandidateBlock">
+                            <div class='InputLine' style="margin:5px 10px !important;">
+                                <div style="display:flex;flex-wrap:nowrap;align-items:center;">
+                                    <!-- <p class="LineNumber">1</p> -->
+                                    <h2>Candidate</h2>
+                                </div>
+                                <input type="text" name="candidate[]" placeholder="Enter the candidate here">
                             </div>
-                            <input type="text" id="organizer" placeholder="Enter the candidate here">
+                            <a class="removeButton" onclick="removeCandidate(this)">
+                                <img src="images/close_96px.png">
+                            </a>
                         </div>
-                        <a id="removeButton" onclick="removeCandidate()">
-                            <img src="images/close_96px.png">
-                        </a>
+                        <div class="CandidateBlock">
+                            <div class='InputLine' style="margin:5px 10px !important;">
+                                <div style="display:flex;flex-wrap:nowrap;align-items:center;">
+                                    <!-- <p class="LineNumber">1</p> -->
+                                    <h2>Candidate</h2>
+                                </div>
+                                <input type="text" name="candidate[]" placeholder="Enter the candidate here">
+                            </div>
+                            <a class="removeButton" onclick="removeCandidate(this)">
+                                <img src="images/close_96px.png">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <div id="VotersBlock">
+                    <!-- <div id="introduction">
+                        <h1>Voters</h1>
+                        <p>
+                            You can add voters to your poll. You can add them by their email.
+                        </p>
+                    </div> -->
+                    <div class="Indicator">
+                        <h2>Voters</h2>
+                        <a id="addButton" class="buttons" onclick="addVoter()">
+                            Add voter
+                        </a>
+                    </div>
+                    <div id="VotersList">
+                        <div class="VoterBlock">
+                            <div class='InputLine'>
+                                <h2>Email of the Voter</h2>
+                                <input type="email" name="voteremails[]" placeholder="Enter the email here">
+                                <input type="number" name="voterVotes[]" placeholder="Enter the number of votes">
+                            </div>
+                            <a class="removeButton" onclick="removeVoter(this)">
+                                <img src="images/close_96px.png">
+                            </a>
+                        </div>
+                        <div class="VoterBlock">
+                            <div class='InputLine'>
+                                <h2>Email of the Voter</h2>
+                                <input type="email" name="voteremails[]" placeholder="Enter the email here">
+                                <input type="number" name="voterVotes[]" placeholder="Enter the number of votes">
+                            </div>
+                            <a class="removeButton" onclick="removeVoter(this)">
+                                <img src="images/close_96px.png">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <button type="submit">Create Poll</button>
+
+            </form>
         </div>
     </div>
 
