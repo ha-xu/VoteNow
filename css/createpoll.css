@@ -232,9 +232,9 @@ input[type="radio"] {
 }
 
 .addButton{
-    background-color: rgb(202, 202, 202) !important;
+    background-color: rgb(235, 235, 235) !important;
 }
 
 .addButton:hover{
-    background-color: rgb(152, 152, 152) !important;
+    background-color: rgb(191, 191, 191) !important;
 }
