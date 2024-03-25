@@ -6,7 +6,7 @@
 
 #Inputs button {
     padding: 10px 15px;
-    background-color: #6cdb70;
+    background-color: #ffaf29;
     border-radius: 8px;
     font-size: 30px;
     align-self: flex-end;
@@ -15,7 +15,7 @@
 }
 
 #Inputs button:hover {
-    background-color: #5d9d5d;
+    background-color: #e39d23;
     cursor: pointer;
 }
 
@@ -229,4 +229,12 @@ textarea {
 
 input[type="radio"] {
     margin: 10px;
+}
+
+.addButton{
+    background-color: rgb(202, 202, 202) !important;
+}
+
+.addButton:hover{
+    background-color: rgb(152, 152, 152) !important;
 }

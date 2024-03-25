@@ -57,7 +57,7 @@ session_start();
                     In this page you can create a poll. Then you can share it with your friends and see the results.
                 </p>
             </div>
-            <form id="Inputs" action="mypolls.php" method="post">
+            <form id="Inputs" action="phps/addpoll.php" method="post">
                 <div class='InputLine'>
                     <h2>Title of the Poll</h2>
                     <input type="text" name="polltitle" placeholder="Enter your title here">
@@ -92,7 +92,7 @@ session_start();
                     </div>
                     <div class="Indicator">
                         <h2>Candidates</h2>
-                        <a id="addButton" class="buttons" onclick="addCandidate()">
+                        <a class="buttons addButton" onclick="addCandidate()">
                             Add candidate
                         </a>
                     </div>
@@ -103,7 +103,7 @@ session_start();
                                     <!-- <p class="LineNumber">1</p> -->
                                     <h2>Candidate</h2>
                                 </div>
-                                <input type="text" name="candidate[]" placeholder="Enter the candidate here">
+                                <input type="text" name="candidates[]" placeholder="Enter the candidate here">
                             </div>
                             <a class="removeButton" onclick="removeCandidate(this)">
                                 <img src="images/close_96px.png">
@@ -115,7 +115,7 @@ session_start();
                                     <!-- <p class="LineNumber">1</p> -->
                                     <h2>Candidate</h2>
                                 </div>
-                                <input type="text" name="candidate[]" placeholder="Enter the candidate here">
+                                <input type="text" name="candidates[]" placeholder="Enter the candidate here">
                             </div>
                             <a class="removeButton" onclick="removeCandidate(this)">
                                 <img src="images/close_96px.png">
@@ -133,7 +133,7 @@ session_start();
                     </div> -->
                     <div class="Indicator">
                         <h2>Voters</h2>
-                        <a id="addButton" class="buttons" onclick="addVoter()">
+                        <a class="buttons addButton" onclick="addVoter()">
                             Add voter
                         </a>
                     </div>
@@ -144,7 +144,7 @@ session_start();
                                 <input type="email" name="voteremails[]" placeholder="Enter the email here">
                                 <div style="display:flex;align-items:center;flex-wrap:nowrap;">    
                                     <h2>Vote times</h2>
-                                    <input type="number" name="voterVotes[]" value="0" min="0" max="2">
+                                    <input type="number" name="votetimes[]" value="0" min="0" max="2">
                                 </div>
                                 </div>
                             <a class="removeButton" onclick="removeVoter(this)">
@@ -157,7 +157,7 @@ session_start();
                                 <input type="email" name="voteremails[]" placeholder="Enter the email here">
                                 <div style="display:flex;align-items:center;flex-wrap:nowrap;">    
                                     <h2>Vote times</h2>
-                                    <input type="number" name="voterVotes[]" value="0" min="0" max="2">
+                                    <input type="number" name="votetimes[]" value="0" min="0" max="2">
                                 </div>
                                 </div>
                             <a class="removeButton" onclick="removeVoter(this)">

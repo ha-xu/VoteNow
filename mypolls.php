@@ -1,11 +1,7 @@
 <?php
-session_start();
-//get values from post
-$candidate = $_POST['candidate'];
-//log
-echo "candidate: ".$candidate[0];
-echo "candidate: ".$candidate[1];
 
+session_start();
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
