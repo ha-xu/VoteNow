@@ -30,7 +30,7 @@ session_start();
         <div id="sidebar">
             <?php
             if (isset($_SESSION["username"])) {
-                echo "<a class='sidebarButtons'> <p>My Polls</p></a>";
+                echo "<a class='sidebarButtons' href='myPolls.php'> <p>My Polls</p></a>";
                 echo "<a id='logoutButton' class='sidebarButtons' onclick='logout()' ><p>Logout</p></a>";
             } else {
                 echo "<a id='loginButton' class='sidebarButtons' href='login.html'><p>Login</p></a>";

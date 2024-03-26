@@ -190,7 +190,7 @@ button:hover {
     align-items: center;
     margin: 30px;
 
-    max-width: 840px;
+   width: 840px;
 }
 
 #introduction{
@@ -218,6 +218,28 @@ button:hover {
     font-size: 18px;
     font-family: 'Gabarito-Regular', sans-serif;
 }
+
+
+.Indicator {
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+    margin: 10px 15px;
+    border-bottom: #f1f1f1 2px solid;
+    width: -webkit-fill-available;
+}
+
+.Indicator h2 {
+    margin: 10px 0px;
+    color: white;
+    font-size: 27px;
+    font-family: 'Gabarito-Bold', sans-serif;
+}
+
+.Indicator a {
+    margin-right: 0px !important;
+}
+
 
 
 /* add font family */

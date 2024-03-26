@@ -9,7 +9,7 @@ if(!isset($_SESSION['username'])){
 }
  
 //open or create json file
-$jsonFile = '../polls.json';
+$jsonFile = '../data/polls.json';
 $jsonString = file_get_contents($jsonFile);
 $pollarray = json_decode($jsonString, true);
 
