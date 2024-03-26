@@ -1,6 +1,6 @@
 <?php
 
-include 'objects.php';
+date_default_timezone_set('Europe/Paris');
 
 session_start();
 
@@ -13,6 +13,11 @@ $jsonFile = '../data/polls.json';
 $jsonString = file_get_contents($jsonFile);
 $pollarray = json_decode($jsonString, true);
 
+//Poll properties
+$uuid = uniqid();
+$createdtime = date("Y-m-d H:i:s");
+$state = 1;
+$createrUserName = $_SESSION['username'];
 //get values from post
 $polltitle = $_POST['polltitle'];
 $organizer = $_POST['organizer'];
@@ -24,11 +29,23 @@ $voteremails = $_POST['voteremails'];
 $votetimes = $_POST['votetimes'];
 
 $voters = array_map(function ($voteremail, $votetime) {
-    return new Voter($voteremail, $votetime);
+    return array('voteremail' => $voteremail,'votetimes' => $votetime);
 }, $voteremails, $votetimes);
 
 //create poll object
-$poll = new Poll($polltitle, $organizer, $polldesc, $waysOfVote, $question, $candidates, $voters);
+$poll = array(
+    'uuid' => $uuid,
+    'createdtime' => $createdtime,
+    'state' => $state,
+    'createrUserName' => $createrUserName,
+    'polltitle' => $polltitle,
+    'organizer' => $organizer,
+    'polldesc' => $polldesc,
+    'waysOfVote' => $waysOfVote,
+    'question' => $question,
+    'candidates' => $candidates,
+    'voters' => $voters
+);
 
 //add poll to data
 $pollarray[] = $poll;

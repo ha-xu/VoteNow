@@ -1,5 +1,4 @@
 <?php
-include 'objects.php';
 require_once  'functions.php';
 session_start();
 
@@ -26,6 +25,7 @@ foreach ($polls as $poll){
     foreach($poll["voters"] as $voter){
         if($voter["voteremail"] == $useremail){
             array_push($myvotepolls, $poll);
+            break;
         }
     }
 }
