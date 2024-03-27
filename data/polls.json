@@ -1,1 +1,32 @@
-[{"uuid":"6603479d66213","createdtime":"2024-03-26 23:09:33","state":1,"createrUserName":"xzh","polltitle":"Best University In the world","organizer":"dsfsdaf sd","polldesc":"asfSD","waysOfVote":"identified","question":"SDfSDF","candidates":["sdfS","vd"],"voters":[{"voteremail":"xuzihansasc@163.com","votetimes":"2"},{"voteremail":"xuzihansasc@163.com","votetimes":"0"}]}]
+[
+    {
+        "uuid": "660480f7627aa",
+        "createdtime": "2024-03-27 21:26:31",
+        "state": 1,
+        "createrUserName": "xzh",
+        "polltitle": "HAPPY ONE WORLD",
+        "organizer": "123",
+        "polldesc": "sDFs ",
+        "question": " fsad fas dasfd s",
+        "candidates": [
+            {
+                "name": "fs afs fsdf",
+                "votes": 0
+            },
+            {
+                "name": " sfsadfddsdfsdfdd",
+                "votes": 0
+            }
+        ],
+        "voters": [
+            {
+                "voteremail": "32ess@12.com",
+                "votetimes": "1"
+            },
+            {
+                "voteremail": "32ess@12.com",
+                "votetimes": "0"
+            }
+        ]
+    }
+]

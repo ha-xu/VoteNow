@@ -22,11 +22,16 @@ $createrUserName = $_SESSION['username'];
 $polltitle = $_POST['polltitle'];
 $organizer = $_POST['organizer'];
 $polldesc = $_POST['polldesc'];
-$waysOfVote = $_POST['waysOfVote'];
+// $waysOfVote = $_POST['waysOfVote'];
 $question = $_POST['pollQuestion'];
-$candidates = $_POST['candidates'];
+$candidateNames = $_POST['candidates'];
 $voteremails = $_POST['voteremails'];
 $votetimes = $_POST['votetimes'];
+
+//create candidates array
+$candidates = array_map(function ($candidateName) {
+    return array('name' => $candidateName, 'votes' => 0);
+}, $candidateNames);
 
 $voters = array_map(function ($voteremail, $votetime) {
     return array('voteremail' => $voteremail,'votetimes' => $votetime);
@@ -41,7 +46,7 @@ $poll = array(
     'polltitle' => $polltitle,
     'organizer' => $organizer,
     'polldesc' => $polldesc,
-    'waysOfVote' => $waysOfVote,
+    // 'waysOfVote' => $waysOfVote,
     'question' => $question,
     'candidates' => $candidates,
     'voters' => $voters

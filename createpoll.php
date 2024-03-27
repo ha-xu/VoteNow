@@ -70,7 +70,7 @@ session_start();
                     <h2>Description</h2>
                     <textarea type="text" rows="3" name="polldesc" placeholder="Enter your description here"></textarea>
                 </div>
-                <div class='InputLine'>
+                <!-- <div class='InputLine'>
                     <h2>Ways of vote</h2>
 
                     <div class="radioButtons">
@@ -83,7 +83,7 @@ session_start();
                             <label class="radioLabel" for="anonymous">Anonymous</label>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="QuestionBlock">
                     <div class='InputLine multilines'>
                         <h2>Question of the Poll</h2>
