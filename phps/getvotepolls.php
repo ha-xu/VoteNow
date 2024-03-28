@@ -2,14 +2,15 @@
 require_once  'functions.php';
 session_start();
 
-$username = $_SESSION['username'];
-
-$useremail = getemailbyusername($username);
 
 if(!isset($_SESSION['username'])){
-    echo "failed";
+    echo "<p class='tip'>Please login first.</p>";
     return;
 }
+
+$username = $_SESSION['username'];
+$useremail = getemailbyusername($username);
+
     
 //open JSON file
 $pollsfile = file_get_contents("../data/polls.json");

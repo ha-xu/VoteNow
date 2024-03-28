@@ -1,13 +1,14 @@
 <?php
 session_start();
 
-$username = $_SESSION['username'];
 
 if(!isset($_SESSION['username'])){
-    echo "failed";
+    echo "<p class='tip'>Please login first.</p>";
     return;
 }
     
+$username = $_SESSION['username'];
+
 //open JSON file
 $pollsfile = file_get_contents("../data/polls.json");
 $polls = json_decode($pollsfile, true);
@@ -33,7 +34,7 @@ if(count($myPolls) == 0){
 $myPolls = array_reverse($myPolls);
 
 foreach($myPolls as $poll){
-        echo "<a href='poll.php?pollid=".$poll['uuid']."'>";
+        echo "<a href='createpoll.php?pollid=".$poll['uuid']."'>";
         echo "<div class='CreatedPoll'>";
         echo "<h2>".$poll['polltitle']."</h2>";
         echo "<h3>start since:<br>".$poll['createdtime']."</h3>";

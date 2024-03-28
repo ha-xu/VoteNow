@@ -1,7 +1,6 @@
 //window laod event
-window.onload = function () {
+window.onload = function() {
     //add event listener to the sidebarback
-    document.getElementById('sidebarBack').addEventListener('click', hideSidebar);
 
 }
 
@@ -38,7 +37,7 @@ function logout() {
         data: {
             logout: 'logout'
         },
-        success: function (data) {
+        success: function(data) {
             //refresh the page
             localStorage.clear();
             location.reload();

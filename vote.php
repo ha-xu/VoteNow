@@ -28,8 +28,6 @@ session_start();
             }
             ?>
         </a>
-
-    
         <div id="sidebarBack"></div>
         <div id="sidebar">
             <?php
