@@ -59,15 +59,15 @@ session_start();
             <form id="Inputs" action="phps/addpoll.php" method="post">
                 <div class='InputLine'>
                     <h2>Title of the Poll</h2>
-                    <input type="text" name="polltitle" placeholder="Enter your title here">
+                    <input id="polltitle" type="text" name="polltitle" placeholder="Enter your title here">
                 </div>
                 <div class='InputLine'>
                     <h2>Organizer/Group</h2>
-                    <input type="text" name="organizer" placeholder="Enter your organizer here">
+                    <input  id="organizer" type="text" name="organizer" placeholder="Enter your organizer here">
                 </div>
                 <div class='InputLine multilines'>
                     <h2>Description</h2>
-                    <textarea type="text" rows="3" name="polldesc" placeholder="Enter your description here"></textarea>
+                    <textarea  id="polldesc" type="text" rows="3" name="polldesc" placeholder="Enter your description here"></textarea>
                 </div>
                 <!-- <div class='InputLine'>
                     <h2>Ways of vote</h2>
@@ -86,7 +86,7 @@ session_start();
                 <div class="QuestionBlock">
                     <div class='InputLine multilines'>
                         <h2>Question of the Poll</h2>
-                        <textarea type="text" rows="3" name="pollQuestion"
+                        <textarea id="pollQuestion" type="text" rows="3" name="pollQuestion"
                             placeholder="Describe your question here"></textarea>
                     </div>
                     <div class="Indicator">
@@ -102,7 +102,7 @@ session_start();
                                     <!-- <p class="LineNumber">1</p> -->
                                     <h2>Candidate</h2>
                                 </div>
-                                <input type="text" name="candidates[]" placeholder="Enter the candidate here">
+                                <input id="candidateName" type="text" name="candidates[]" placeholder="Enter the candidate here">
                             </div>
                             <a class="removeButton" onclick="removeCandidate(this)">
                                 <img src="images/close_96px.png">
@@ -114,7 +114,7 @@ session_start();
                                     <!-- <p class="LineNumber">1</p> -->
                                     <h2>Candidate</h2>
                                 </div>
-                                <input type="text" name="candidates[]" placeholder="Enter the candidate here">
+                                <input id="candidateName" type="text" name="candidates[]" placeholder="Enter the candidate here">
                             </div>
                             <a class="removeButton" onclick="removeCandidate(this)">
                                 <img src="images/close_96px.png">
@@ -140,10 +140,10 @@ session_start();
                         <div class="VoterBlock">
                             <div class='InputLine'>
                                 <h2>Voter's Email</h2>
-                                <input type="email" name="voteremails[]" placeholder="Enter the email here">
+                                <input id="voteremail" type="email" name="voteremails[]" placeholder="Enter the email here">
                                 <div style="display:flex;align-items:center;flex-wrap:nowrap;">    
                                     <h2>Vote times</h2>
-                                    <input type="number" name="votetimes[]" value="0" min="0" max="2">
+                                    <input id="votetimes" type="number" name="votetimes[]" value="0" min="0" max="2">
                                 </div>
                                 </div>
                             <a class="removeButton" onclick="removeVoter(this)">
@@ -153,10 +153,10 @@ session_start();
                         <div class="VoterBlock">
                             <div class='InputLine'>
                                 <h2>Voter's Email</h2>
-                                <input type="email" name="voteremails[]" placeholder="Enter the email here">
+                                <input id="voteremail" type="email" name="voteremails[]" placeholder="Enter the email here">
                                 <div style="display:flex;align-items:center;flex-wrap:nowrap;">    
                                     <h2>Vote times</h2>
-                                    <input type="number" name="votetimes[]" value="0" min="0" max="2">
+                                    <input id="votetimes" type="number" name="votetimes[]" value="0" min="0" max="2">
                                 </div>
                                 </div>
                             <a class="removeButton" onclick="removeVoter(this)">
