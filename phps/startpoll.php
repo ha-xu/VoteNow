@@ -1,6 +1,6 @@
 <?php
     //ce php file permet de rechercher une scutin avec son uuid et de 
-    //renvoyer les informations de ce scrutin   
+    //mettre à jour son état en 1
     $pollid = $_POST['pollid'];
     // echo $pollid;
 
@@ -15,8 +15,11 @@
 
     foreach ($polls as $poll){
         if($poll['uuid'] == $pollid){
-            echo json_encode($poll);
+            if($poll['state'] == 0){
+                $poll['state'] = 1;
+                echo "ok";
             return;
+            }
         }
     }
 

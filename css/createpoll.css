@@ -4,7 +4,28 @@
     flex-direction: column;
 }
 
-#Inputs button {
+#buttonsDiv{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 10px;
+    flex-wrap: wrap;
+
+}
+
+#EditButton{
+    background-color: #29d6ff;
+}
+
+#EditButton:hover{
+    background-color: #1e9db9;
+}
+
+#StopButton{
+    /* background-color: #fa5d5d; */
+}
+
+.pollSubmitButtons {
     padding: 10px 15px;
     background-color: #ffaf29;
     border-radius: 8px;
@@ -12,9 +33,11 @@
     align-self: flex-end;
     width: fit-content;
     transition: ease-in-out 0.3s;
+    font-family: "Gabarito-Bold", sans-serif;
+    margin: 10px;
 }
 
-#Inputs button:hover {
+.pollSubmitButtons:hover {
     background-color: #e39d23;
     cursor: pointer;
 }
@@ -161,6 +184,8 @@ textarea {
 }
 
 .removeButton {
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     place-content: center;
@@ -218,4 +243,54 @@ input[type="radio"] {
 
 .addButton:hover{
     background-color: rgb(191, 191, 191) !important;
+}
+
+
+#cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.581);
+    /* disable scroll */
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+ 
+#CancelButton{
+    display: none;
+}
+
+#resultPanel{
+    width: 800px;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    box-shadow: 0px 4px 14px 0 rgba(0, 0, 0, 0.8);
+}
+
+#CandidateResultList{
+    display: flex;
+    flex-direction: column;
+}
+
+.CandidateResultsLine{
+    width: calc(100% - 40px);
+    place-content: space-between;
+}
+
+.CandidateResultsLine p{
+    margin: 0;
+    font-size: 30px;
+    font-family: 'Gabarito-Bold', sans-serif;
+    color: white;
+}
+
+.votenumberBlock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
 }
