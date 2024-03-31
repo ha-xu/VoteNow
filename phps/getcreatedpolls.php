@@ -41,7 +41,7 @@ foreach($myPolls as $poll){
         if($poll['state'] == 1){
             echo "<h4 style='background-color:#60ff94'>In progress</h4>";
         }else{
-            echo "<h4 style='background-color:#b3b3b3!important'>Finished</h4>";
+            echo "<h4 style='background-color:#ffb868!important'>Finished</h4>";
         }
         echo "</div>";
         echo "</a>";

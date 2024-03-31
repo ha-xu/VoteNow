@@ -36,6 +36,7 @@ session_start();
             <?php
             if (isset($_SESSION["username"])) {
                 echo "<a class='sidebarButtons' href='index.php'> <p>My Polls</p></a>";
+                echo "<a class='sidebarButtons' href='createPoll.php'> <p>Create Poll</p></a>";
                 echo "<a id='logoutButton' class='sidebarButtons' onclick='logout()' ><p>Logout</p></a>";
             } else {
                 echo "<a id='loginButton' class='sidebarButtons' href='login.html'><p>Login</p></a>";
@@ -57,6 +58,9 @@ session_start();
                 </p>
             </div>
             <form id="Inputs" action="phps/addpoll.php" method="post">
+                <div id="statuebar">
+                    <h2>In progress</h2>
+                </div>
                 <div class='InputLine'>
                     <h2>Title of the Poll</h2>
                     <input id="polltitle" type="text" name="polltitle" placeholder="Enter your title here">

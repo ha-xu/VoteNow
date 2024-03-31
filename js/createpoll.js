@@ -1,25 +1,25 @@
 var currentPollid = null;
 var pollfinished = false;
-$(document).ready(function() {
+$(document).ready(function () {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const pollid = urlParams.get('pollid');
     currentPollid = pollid;
-    if(pollid == null){
+    if (pollid == null) {
         $('#ConfirmButton').css('display', 'none');
         $('#EditButton').css('display', 'none');
         $('#StopButton').css('display', 'none');
         $('#CreateButton').css('display', 'block');
-
-        document.getElementById("Inputs").addEventListener("submit", function(event) {
+        $('#statuebar').css('display', 'none');
+        document.getElementById("Inputs").addEventListener("submit", function (event) {
             if (testAllFilled() === false) {
                 alert('please fill all the blanks');
                 event.preventDefault();
             }
         });
         return;
-    }else{
-    //si on a un pollid, on recherche le poll avec cet id
+    } else {
+        //si on a un pollid, on recherche le poll avec cet id
 
         // console.log($('#introduction h1').html());
         $('#introduction h1').html('Poll details');
@@ -30,11 +30,11 @@ $(document).ready(function() {
 
         startReadOnly();
     }
-    
+
 });
 
 //function to start a read-only mode
-function startReadOnly(){
+function startReadOnly() {
     $('input').attr('readonly', true);
     $('textarea').attr('readonly', true);
     $('.addButton').css('display', 'none');
@@ -49,7 +49,7 @@ function startReadOnly(){
 }
 
 //function to start edit
-function startEdit(){
+function startEdit() {
 
 
     $('input').attr('readonly', false);
@@ -67,7 +67,7 @@ function startEdit(){
 }
 
 //function to confirm the changes
-function confirmEdit(){
+function confirmEdit() {
 
     if (testAllFilled() === false) {
         alert('please fill all the blanks');
@@ -79,17 +79,17 @@ function confirmEdit(){
     searchPoll(currentPollid);
 }
 
-function CancelEdit(){
+function CancelEdit() {
     startReadOnly();
     searchPoll(currentPollid);
 }
 
 //function to go back to the index page
-function BackList(){
+function BackList() {
     window.location.href = 'index.php';
 }
 
-function getPollInfo(){
+function getPollInfo() {
     var pollInfo = {
         polltitle: $('#polltitle').val(),
         organizer: $('#organizer').val(),
@@ -100,7 +100,7 @@ function getPollInfo(){
     };
 
     //get the candidates
-    var candidateList = document.getElementById("CandidatesList").children; 
+    var candidateList = document.getElementById("CandidatesList").children;
     for (var i = 0; i < candidateList.length; i++) {
         var candidate = candidateList[i];
         pollInfo.candidates.push({
@@ -123,7 +123,7 @@ function getPollInfo(){
 }
 
 //function to Apply the changes
-function applyEdit(){
+function applyEdit() {
 
     console.log(getPollInfo());
 
@@ -137,12 +137,12 @@ function applyEdit(){
             pollid: currentPollid,
             pollinfo: getPollInfo()
         },
-        success: function(data) {
+        success: function (data) {
             //refresh the page
-             console.log(data);
-             if(data == 'Edit poll success'){
-                 alert('Edit poll success');
-            }else{
+            console.log(data);
+            if (data == 'Edit poll success') {
+                alert('Poll restarted successfully');
+            } else {
                 alert('Edit poll failed');
             }
             //redirection
@@ -152,39 +152,41 @@ function applyEdit(){
 }
 
 
-function ShowResult(){
+function ShowResult() {
     //confirm box
 
-    if(pollfinished === false){
-        StopPoll();
+    if (pollfinished === false) {
         var result = confirm("Are you sure to show the result?\nThis poll will stop.\nIt means this poll won't be able to vote anymore.");
-        if(result == false){
+        if (result == false) {
             return;
         }
     }
-    
+    StopPoll();
+    searchPoll(currentPollid);
+    searchResult(currentPollid);
+
     ClearResultList()
     $("#cover").css("display", "flex");
-    searchResult(currentPollid);
+
 }
 
-function ClearCandidateList(){
+function ClearCandidateList() {
     var candidateList = document.getElementById("CandidatesList");
-    while(candidateList.childElementCount > 1){
+    while (candidateList.childElementCount > 1) {
         candidateList.children[1].remove();
     }
 }
 
-function ClearVotersList(){
+function ClearVotersList() {
     var voterList = document.getElementById("VotersList");
-    while(voterList.childElementCount > 1){
+    while (voterList.childElementCount > 1) {
         voterList.children[1].remove();
     }
 }
 
-function ClearResultList(){
+function ClearResultList() {
     var candidateList = document.getElementById("CandidateResultList");
-    while(candidateList.childElementCount > 1){
+    while (candidateList.childElementCount > 1) {
         candidateList.children[1].remove();
     }
 }
@@ -192,40 +194,40 @@ function ClearResultList(){
 
 //on recherche le poll avec l'id donné avec ajax
 //si on le trouve, on remplit les champs du formulaire avec les informations du poll
-function searchPoll(pollid){
+function searchPoll(pollid) {
     $.ajax({
         url: "../phps/searchpoll.php",
         type: 'post',
         data: {
             pollid: pollid
         },
-        success: function(data) {
-            if(data == 'Get poll failed'){
+        success: function (data) {
+            if (data == 'Get poll failed') {
                 alert('Get poll failed');
                 //redirection
                 window.location.href = 'index.php';
                 return null;
-            }else{
+            } else {
                 fillPoll(JSON.parse(data));
             }
         }
     });
 }
 
-function searchResult(pollid){
+function searchResult(pollid) {
     $.ajax({
         url: "../phps/searchpoll.php",
         type: 'post',
         data: {
             pollid: pollid
         },
-        success: function(data) {
-            if(data == 'Get result failed'){
+        success: function (data) {
+            if (data == 'Get result failed') {
                 alert('Get result failed');
                 //redirection
                 window.location.href = 'index.php';
                 return null;
-            }else{
+            } else {
                 fillResult(JSON.parse(data));
             }
         }
@@ -233,11 +235,11 @@ function searchResult(pollid){
 }
 
 //on remplit les champs du formulaire avec les informations du poll
-function fillPoll(pollInfo){
+function fillPoll(pollInfo) {
 
-    if(pollInfo.state == 0){
+    if (pollInfo.state == 0) {
         pollfinished = true;
-    }else{
+    } else {
         pollfinished = false;
     }
 
@@ -245,7 +247,20 @@ function fillPoll(pollInfo){
     $('#organizer').val(pollInfo.organizer);
     $('#polldesc').val(pollInfo.polldesc);
     $('#pollQuestion').html(pollInfo.question);
-    
+
+    if (pollfinished === false) {
+        $('#statuebar').css('background-color', '#60ff94');
+        $('#statuebar h2').html('In progress');
+        $('#StopButton').html('Stop Poll & Show Result');
+
+
+    } else {
+        $('#statuebar').css('background-color', '#ffb868');
+        $('#statuebar h2').html('Finished');
+        $('#StopButton').html('Show Result');
+
+    }
+
     ClearCandidateList();
     var candidates = pollInfo.candidates;
     for (var i = 0; i < candidates.length; i++) {
@@ -266,7 +281,7 @@ function fillPoll(pollInfo){
 }
 
 //on remplit les champs du formulaire avec les resultat du poll
-function fillResult(pollInfo){
+function fillResult(pollInfo) {
     $("#pollResQuestion").val(pollInfo.question);
     for (var i = 0; i < pollInfo.candidates.length; i++) {
         addResCandidateWithInfo(pollInfo.candidates[i].name, pollInfo.candidates[i].votes);
@@ -389,8 +404,8 @@ function removeVoter(removeButton) {
 function testAllFilled() {
     var allFilled = true;
 
-    $('input, textarea').each(function() {
-        if (!$(this).val().trim()){
+    $('input, textarea').each(function () {
+        if (!$(this).val().trim()) {
             allFilled = false;
             return false;
         }
@@ -399,17 +414,17 @@ function testAllFilled() {
     return allFilled;
 }
 
-function StopPoll(){
+function StopPoll() {
     $.ajax({
         url: "../phps/stoppoll.php",
         type: 'post',
         data: {
             pollid: currentPollid
         },
-        success: function(data) {
+        success: function (data) {
             //refresh the page
             console.log(data);
-            if(data !== 'ok'){
+            if (data !== 'ok') {
                 alert('Stop poll failed');
             }
             //redirection
@@ -419,6 +434,6 @@ function StopPoll(){
 }
 
 
-function HideCover(){
+function HideCover() {
     $("#cover").css("display", "none");
 }

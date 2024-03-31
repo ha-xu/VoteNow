@@ -25,6 +25,23 @@
     /* background-color: #fa5d5d; */
 }
 
+#statuebar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+#statuebar h2{
+    color: black;
+    font-size: 20px;
+    font-family: 'Gabarito-Bold', sans-serif;
+    margin:0px;
+}
+
 .pollSubmitButtons {
     padding: 10px 15px;
     background-color: #ffaf29;
