@@ -2,7 +2,7 @@
 window.onload = function() {
     document.getElementById('sidebarBack').addEventListener('click', hideSidebar);
     loadCreatedPolls();
-    loadVotePolls();
+    // loadVotePolls();
 }
 
 function loadCreatedPolls() {

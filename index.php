@@ -1,10 +1,11 @@
 <?php
 
 session_start();
- 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +17,9 @@ session_start();
     <script src="js/mypolls.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
-<header>
+    <header>
         <a id="logoButton" href="index.php">
             <h1>Vote Now</h1>
         </a>
@@ -26,7 +28,7 @@ session_start();
             <?php
             if (isset($_SESSION['username'])) {
                 echo "<p id='usernamep'>" . $_SESSION['username'] . "</p>";
-            } 
+            }
             // else {
             //     echo "<script>location.href='index.php'</script>";
             // }
@@ -41,8 +43,7 @@ session_start();
                 echo "<a class='sidebarButtons' href='index.php'> <p>My Polls</p></a>";
                 echo "<a class='sidebarButtons' href='createPoll.php'> <p>Create Poll</p></a>";
                 echo "<a id='logoutButton' class='sidebarButtons' onclick='logout()' ><p>Logout</p></a>";
-            } 
-            else {
+            } else {
                 echo "<a id='loginButton' class='sidebarButtons' href='login.html'><p>Login</p></a>";
             }
             ?>
@@ -53,25 +54,40 @@ session_start();
     </header>
     <div id="main">
         <div id="content">
-        <div class="Indicator">
-            <h2>Polls created by me</h1>
-        </div>
-        <div id="createdPolls" class="PollsList">
-            <!-- <div class="CreatedPoll">
+            <div class="Indicator">
+                <h2>Polls created by me</h1>
+            </div>
+            <div id="createdPolls" class="PollsList">
+                <!-- <div class="CreatedPoll">
                 <h2>What is your favorite color?</h2>
                 <h3>26/03/2024</h3>
                 <h4>In progress</h4>
             </div> -->
-        </div>
-        <div class="Indicator">
-            <h2>Polls to vote</h1>
-        </div>
-        <div id="pollsToVote" class="PollsList">
-            <!-- <div class="PollToVote">
-                <h2>What is your favorite color?</h2>
-                <h3>26/03/2024</h3>
-                <button>Vote</button>
-            </div> -->
-    </div>
+            </div>
+            <div class="Indicator">
+                <h2>Polls to vote</h1>
+            </div>
+            <div id="pollsToVote" class="PollsList">
+                <div class="PollToVote">
+                    <h2>What is your favorite color?</h2>
+                    <h4>In progress</h4>
+
+                    <h3>start since: 26/03/2024</h3>
+                    <div class="PollTimesBlock">
+                        <h3>Vote time left:</h3>
+                        <p>3</p>
+                    </div>
+                    <div class="PollQuestionBlock">
+                        <h3>Voter for the cleverest person in the fucking world</h3>
+                        <a>Albert Einstein</a>
+                        <a>Zihan XU</a>
+                    </div>
+                    <div class="PollButtonsBlock">
+                        <a id="restartbutton">Restart vote</a>
+                        <a id="confirmbutton">Confirm vote</a>
+                    </div>
+                </div>
+            </div>
 </body>
+
 </html>

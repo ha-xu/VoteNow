@@ -40,13 +40,13 @@ if(count($myvotepolls) == 0){
 $myvotepolls = array_reverse($myvotepolls);
 
 foreach($myvotepolls as $poll){
-    echo "<div class='CreatedPoll'>";
-    echo "<h2>".$poll['polltitle']."</h2>";
-    echo "<h3>start since:<br>".$poll['createdtime']."</h3>";
-    if($poll['state'] == 1){
-        echo "<h4 style='background-color:#60ff94'>In progress</h4>";
-    }else{
-        echo "<h4 style='background-color:#ffb868!important'>Finished</h4>";
-    }
-    echo "</div>";
+    // echo "<div class='CreatedPoll'>";
+    // echo "<h2>".$poll['polltitle']."</h2>";
+    // echo "<h3>start since:<br>".$poll['createdtime']."</h3>";
+    // if($poll['state'] == 1){
+    //     echo "<h4 style='background-color:#60ff94'>In progress</h4>";
+    // }else{
+    //     echo "<h4 style='background-color:#ffb868!important'>Finished</h4>";
+    // }
+    // echo "</div>";
 }
