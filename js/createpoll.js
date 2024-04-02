@@ -115,7 +115,8 @@ function getPollInfo() {
         var voter = voterList[i];
         pollInfo.voters.push({
             voteremail: voter.querySelector('#voteremail').value,
-            votetimes: voter.querySelector('#votetimes').value
+            proxy: voter.querySelector('#proxy').value,
+            voteleft: parseInt(voter.querySelector('#proxy').value) + 1
         });
     }
 
@@ -273,7 +274,7 @@ function fillPoll(pollInfo) {
     ClearVotersList();
     var voters = pollInfo.voters;
     for (var i = 0; i < voters.length; i++) {
-        addVoterWithInfo(voters[i].voteremail, voters[i].votetimes);
+        addVoterWithInfo(voters[i].voteremail, voters[i].proxy);
     }
     //remove first voter block
     $('#VotersList').children().first().remove();
@@ -336,7 +337,7 @@ function addResCandidateWithInfo(name, votes) {
     //new button element
     candidateList.appendChild(newcandidate);
     // candidateList.innerHTML += newcandidate.outerHTML;
-    newcandidate.querySelector('#candidateName').value = name;
+    newcandidate.querySelector('#candidateResName').value = name;
     newcandidate.querySelector('#candidateVotes').innerHTML = votes;
 
 }
@@ -370,7 +371,7 @@ function addVoter() {
 }
 
 //ajoute un votant à la liste des votants avec son email et le nombre de votes
-function addVoterWithInfo(email, votetimes) {
+function addVoterWithInfo(email, proxy) {
     var voter = $('#VotersList').children().first().html();
     var voterList = document.getElementById("VotersList");
 
@@ -383,7 +384,7 @@ function addVoterWithInfo(email, votetimes) {
     voterList.appendChild(newVoter);
     // voterList.innerHTML += newVoter.outerHTML;
     newVoter.querySelector('#voteremail').value = email;
-    newVoter.querySelector('#votetimes').value = votetimes;
+    newVoter.querySelector('#proxy').value = proxy;
 }
 
 
@@ -405,7 +406,12 @@ function testAllFilled() {
     var allFilled = true;
 
     $('input, textarea').each(function () {
-        if (!$(this).val().trim()) {
+        console.log($(this).val());
+        console.log($(this).css('visibility'));
+        //get this id
+        console.log($(this).attr('id'));
+
+        if (!$(this).val().trim() && $(this).attr('id') !== 'pollResQuestion' && $(this).attr('id') !== 'candidateResName'){
             allFilled = false;
             return false;
         }

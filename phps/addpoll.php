@@ -26,16 +26,16 @@ $polldesc = $_POST['polldesc'];
 $question = $_POST['pollQuestion'];
 $candidateNames = $_POST['candidates'];
 $voteremails = $_POST['voteremails'];
-$votetimes = $_POST['votetimes'];
+$proxies = $_POST['proxies'];
 
 //create candidates array
 $candidates = array_map(function ($candidateName) {
     return array('name' => $candidateName, 'votes' => 0);
 }, $candidateNames);
 
-$voters = array_map(function ($voteremail, $votetime) {
-    return array('voteremail' => $voteremail,'votetimes' => $votetime);
-}, $voteremails, $votetimes);
+$voters = array_map(function ($voteremail, $proxy) {
+    return array('voteremail' => $voteremail,'proxy' => (int)$proxy,'voteleft' => $proxy + 1);
+}, $voteremails, $proxies);
 
 //create poll object
 $poll = array(
@@ -58,4 +58,4 @@ $pollarray[] = $poll;
 //write to json file
 file_put_contents($jsonFile, json_encode($pollarray) );
 
-echo "<script>location.href='../myPolls.php'</script>";
+echo "<script>location.href='../index.php'</script>";

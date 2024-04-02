@@ -15,6 +15,7 @@ session_start();
     <link rel="stylesheet" href="css/mypolls.css">
     <script src="js/header.js"></script>
     <script src="js/mypolls.js"></script>
+    <script src="js/vote.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -68,7 +69,7 @@ session_start();
                 <h2>Polls to vote</h1>
             </div>
             <div id="pollsToVote" class="PollsList">
-                <div class="PollToVote">
+                <!-- <div class="PollToVote">
                     <h2>What is your favorite color?</h2>
                     <h4>In progress</h4>
 
@@ -86,7 +87,7 @@ session_start();
                         <a id="restartbutton">Restart vote</a>
                         <a id="confirmbutton">Confirm vote</a>
                     </div>
-                </div>
+                </div> -->
             </div>
 </body>
 

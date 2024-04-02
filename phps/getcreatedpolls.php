@@ -34,9 +34,7 @@ if(count($myPolls) == 0){
 $myPolls = array_reverse($myPolls);
 
 foreach($myPolls as $poll){
-        echo "<a href='createpoll.php?pollid=".$poll['uuid']."'>";
-        echo "<div class='CreatedPoll'>";
- 
+        echo "<a  class='CreatedPoll' href='createpoll.php?pollid=".$poll['uuid']."'>"; 
         echo "<h2>".$poll['polltitle']."</h2>";
         if($poll['state'] == 1){
             echo "<h4 style='background-color:#60ff94'>In progress</h4>";
@@ -44,7 +42,5 @@ foreach($myPolls as $poll){
             echo "<h4 style='background-color:#ffb868!important'>Finished</h4>";
         }
         echo "<h3>start since:<br>".$poll['createdtime']."</h3>";
-        
-        echo "</div>";
         echo "</a>";
 }

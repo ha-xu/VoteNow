@@ -150,8 +150,8 @@ session_start();
                                 <input id="voteremail" type="email" name="voteremails[]"
                                     placeholder="Enter the email here">
                                 <div style="display:flex;align-items:center;flex-wrap:nowrap;">
-                                    <h2>Vote times</h2>
-                                    <input id="votetimes" type="number" name="votetimes[]" value="0" min="0" max="2">
+                                    <h2>proxy</h2>
+                                    <input id="proxy" type="number" name="proxies[]" value="0" min="0" max="2">
                                 </div>
                             </div>
                             <a class="removeButton" onclick="removeVoter(this)">
@@ -165,7 +165,7 @@ session_start();
                                     placeholder="Enter the email here">
                                 <div style="display:flex;align-items:center;flex-wrap:nowrap;">
                                     <h2>Vote times</h2>
-                                    <input id="votetimes" type="number" name="votetimes[]" value="0" min="0" max="2">
+                                    <input id="proxy" type="number" name="proxies[]" value="0" min="0" max="2">
                                 </div>
                             </div>
                             <a class="removeButton" onclick="removeVoter(this)">
@@ -200,7 +200,7 @@ session_start();
                         <div style="display:flex;flex-wrap:nowrap;align-items:center;">
                             <!-- <p class="LineNumber">1</p> -->
                             <h2>Candidate</h2>
-                            <input id="candidateName" type="text" name="candidates[]"
+                            <input id="candidateResName" type="text" name="candidates[]"
                                 placeholder="Enter the candidate here" readonly>
                         </div>
 

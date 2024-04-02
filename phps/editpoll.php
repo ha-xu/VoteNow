@@ -18,6 +18,7 @@
         if($poll['uuid'] == $pollid){
 
             $poll['state'] = 1;
+            $poll['createdtime'] = date("Y-m-d H:i:s");
 
             $poll['polltitle'] = $pollinfo['polltitle'];
             $poll['organizer'] = $pollinfo['organizer'];
