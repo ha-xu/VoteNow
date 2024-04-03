@@ -53,7 +53,7 @@ if(count($myvotepolls) == 0){
 $myvotepolls = array_reverse($myvotepolls);
 
 foreach($myvotepolls as $poll){
-    echo "<div class='PollToVote'>";
+    echo "<div id=". $poll["uuid"] ." class='PollToVote'>";
     echo "<h2>".$poll['polltitle']."</h2>";
     if($poll['state'] == 1){
         echo "<h4 style='background-color:#60ff94'>In progress</h4>";
@@ -69,12 +69,12 @@ foreach($myvotepolls as $poll){
     echo "<div class='PollQuestionBlock'>";
         echo "<h3>Question:<br>".$poll["question"]."</h3>";
         foreach($poll["candidates"] as $candidate){
-            echo "<a onclick='voteFor(\"".$candidate["name"]."\")'>".$candidate["name"]."</a>";
+            echo "<a onclick='voteFor(\"". $poll["uuid"]."\",\"".$candidate["name"]."\")'>".$candidate["name"]."</a>";
         }
     echo "</div>";
     echo "<div class='PollButtonsBlock'>";
-        echo "<a onclick='restartVote()' id='restartbutton'>Restart vote</a>";
-        echo "<a onclick='confirmVote()' id='confirmbutton'>Confirm vote</a>";
+        echo "<a onclick='restartVote(\"". $poll["uuid"]."\",\"". $currentVote["voteleft"]  ."\")' id='restartbutton'>Restart vote</a>";
+        echo "<a onclick='confirmVote(\"". $poll["uuid"]."\",\"". $currentVote["voteleft"]  ."\")' id='confirmbutton'>Confirm vote</a>";
     echo "</div>";
     echo "</div>";
 }
