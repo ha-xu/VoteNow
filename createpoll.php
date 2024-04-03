@@ -164,7 +164,7 @@ session_start();
                                 <input id="voteremail" type="email" name="voteremails[]"
                                     placeholder="Enter the email here">
                                 <div style="display:flex;align-items:center;flex-wrap:nowrap;">
-                                    <h2>Vote times</h2>
+                                    <h2>proxy</h2>
                                     <input id="proxy" type="number" name="proxies[]" value="0" min="0" max="2">
                                 </div>
                             </div>

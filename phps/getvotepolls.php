@@ -32,27 +32,28 @@ if($polls == null){
     return;
 }
 
-$myvotepolls = array();
-$currentVote = null;
+$myvotepollsInfo = array();
 foreach ($polls as $poll){
     foreach($poll["voters"] as $voter){
         if($voter["voteremail"] == $useremail){
-            array_push($myvotepolls, $poll);
-            $currentVote = $voter;
+            $myvotepollsInfo[]=array("poll"=>$poll,"voter"=>$voter);
             break;
         }
     }
 }
 
-if(count($myvotepolls) == 0){
+if(count($myvotepollsInfo) == 0){
     echo "<p class='tip'>You have not been invited to any polls yet.</p>";
     return;
 }
 
 //reverse the array to show the latest poll first
-$myvotepolls = array_reverse($myvotepolls);
+$myvotepollsInfo = array_reverse($myvotepollsInfo);
 
-foreach($myvotepolls as $poll){
+foreach($myvotepollsInfo as $PollInfo){
+    $poll = $PollInfo["poll"];
+    $currentVote = $PollInfo["voter"];
+    
     echo "<div id=". $poll["uuid"] ." class='PollToVote'>";
     echo "<h2>".$poll['polltitle']."</h2>";
     if($poll['state'] == 1){
