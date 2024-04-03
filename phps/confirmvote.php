@@ -1,8 +1,19 @@
 <?php
 
-require_once('getvotepolls.php');
+// require_once('getvotepolls.php');
 //get current user
 session_start();
+
+function getemailbyusername($username){
+    $usersfile = file_get_contents("../data/users.json");
+    $users = json_decode($usersfile, true);
+    foreach($users as $user){
+        if($user['username'] == $username){
+            return $user['email'];
+        }
+    }
+    return null;
+}
 
 if(!isset($_SESSION['username'])){
     echo "<script>alert('Please login first.');</script>";

@@ -59,10 +59,12 @@ function confirmVote(uuid, totalvotetimeleft) {
                 data: {voteInfo: currentVoteInfo},
                 success: function(data){
                     console.log(data);
-                    // if(data === "ok"){
-                    //     alert("You voted successfully");
-                    //     candidatesInfo = otherVoteInfo;
-                    // }
+                    if(data === "ok"){
+                        alert("You voted successfully");
+                        candidatesInfo = otherVoteInfo;
+                        //refresh the page
+                        location.reload();
+                    }
                 }
             });
         }
