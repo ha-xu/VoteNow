@@ -31,7 +31,7 @@ if(count($myPolls) == 0){
 }
 
 //reverse the array to show the latest poll first
-$myPolls = array_reverse($myPolls);
+// $myPolls = array_reverse($myPolls);
 
 foreach($myPolls as $poll){
         echo "<a  class='CreatedPoll' href='createpoll.php?pollid=".$poll['uuid']."'>"; 

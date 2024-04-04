@@ -50,7 +50,7 @@ if (count($myvotepollsInfo) == 0) {
 }
 
 //reverse the array to show the latest poll first
-$myvotepollsInfo = array_reverse($myvotepollsInfo);
+// $myvotepollsInfo = array_reverse($myvotepollsInfo);
 
 foreach ($myvotepollsInfo as $PollInfo) {
     $poll = $PollInfo["poll"];
