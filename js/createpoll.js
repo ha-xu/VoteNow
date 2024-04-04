@@ -283,9 +283,15 @@ function fillPoll(pollInfo) {
 
 //on remplit les champs du formulaire avec les resultat du poll
 function fillResult(pollInfo) {
+    //total votes
+    var totalvotes = 0;
+    for (var i = 0; i < pollInfo.candidates.length; i++) {
+        totalvotes += pollInfo.candidates[i].votes;
+    }
+    console.log(totalvotes);
     $("#pollResQuestion").val(pollInfo.question);
     for (var i = 0; i < pollInfo.candidates.length; i++) {
-        addResCandidateWithInfo(pollInfo.candidates[i].name, pollInfo.candidates[i].votes);
+        addResCandidateWithInfo(pollInfo.candidates[i].name, pollInfo.candidates[i].votes, totalvotes);
     }
     //remove first candidate block
     $('#CandidateResultList').children().first().remove();
@@ -325,9 +331,10 @@ function addCandidateWithInfo(name) {
     // newcandidate.querySelector('.candidateDesc').value = desc;
 }
 
-function addResCandidateWithInfo(name, votes) {
+function addResCandidateWithInfo(name, votes, totalvotes) {
     var candidate = $('#CandidateResultList').children().first().html();
     var candidateList = document.getElementById("CandidateResultList");
+
 
     //new div element
     var newcandidate = document.createElement("div");
@@ -339,7 +346,7 @@ function addResCandidateWithInfo(name, votes) {
     // candidateList.innerHTML += newcandidate.outerHTML;
     newcandidate.querySelector('#candidateResName').value = name;
     newcandidate.querySelector('#candidateVotes').innerHTML = votes;
-
+    newcandidate.querySelector('#candidateRate').innerHTML = (votes / totalvotes * 100).toFixed(2) + '%';
 }
 
 //retire un candidat de la liste des candidats

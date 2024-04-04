@@ -35,8 +35,9 @@ if ($polls == null) {
 
 $myvotepollsInfo = array();
 foreach ($polls as $poll) {
-    foreach ($poll["voters"] as $voter) {
-        if ($voter["voteremail"] == $useremail) {
+    $voters = $poll["voters"];
+    foreach ($voters as $voter) {
+        if ($voter["voteremail"] === $useremail) {
             $myvotepollsInfo[] = array("poll" => $poll, "voter" => $voter);
             break;
         }
@@ -89,10 +90,16 @@ foreach ($myvotepollsInfo as $PollInfo) {
         echo "<h3>Question:<br>" . $poll["question"] . "</h3>";
         echo "<div class='candidateResBlock'>";
 
+        $totalvotes = 0;
+        foreach ($poll["candidates"] as $candidate) {
+            $totalvotes += $candidate["votes"];
+        }
+
         foreach ($poll["candidates"] as $candidate) {
             echo "<div class='candidateres'>";
             echo "<p class='candidateresname'>" . $candidate["name"] . "</p>";
-            echo "<p class='candidateresvote'>" . $candidate["votes"] . "</p>";
+            echo "<p class='candidateresvote'>" . $candidate["votes"] ." votes </p>";
+            echo "<p class='candidateresrate'>rate: " . number_format(((double)$candidate["votes"] / (double) $totalvotes) * 100 ,1) . "%</p>";
             echo "</div>";
         }
         echo "</div>";

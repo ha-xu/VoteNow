@@ -205,8 +205,9 @@ session_start();
                         </div>
 
                         <div class="votenumberBlock">
-                            <h2>Number of votes:</h2>
                             <p id="candidateVotes">0</p>
+                            <h2>votes |</h2>
+                            <p id="candidateRate">0</p>
                         </div>
                     </div>
                 </div>
