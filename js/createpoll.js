@@ -17,6 +17,8 @@ $(document).ready(function () {
         $('#StopButton').css('display', 'none');
         $('#CreateButton').css('display', 'block');
         $('#statuebar').css('display', 'none');
+        $('#deleteButton').css('display', 'none');
+
         document.getElementById("Inputs").addEventListener("submit", function (event) {
             if (testAllFilled() === false) {
                 alert('please fill all the blanks');
