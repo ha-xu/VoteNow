@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once("encrypt.php");
+
 // C'est une fonction qui permet renvoyer l'email d'un utilisateur en fonction de son nom d'utilisateur
 function getemailbyusername($username)
 {

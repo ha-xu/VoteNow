@@ -1,6 +1,12 @@
 var currentPollid = null;
 var pollfinished = false;
+
+
 $(document).ready(function () {
+
+    document.getElementById('sidebarBack').addEventListener('click', hideSidebar);
+
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const pollid = urlParams.get('pollid');
@@ -45,6 +51,7 @@ function startReadOnly() {
     $('#StopButton').css('display', 'block');
     $('#CancelButton').css('display', 'none');
     $('#BackButton').css('display', 'block');
+    $('#deleteButton').css('display', 'block');
 
 }
 
@@ -64,6 +71,9 @@ function startEdit() {
     $('#StopButton').css('display', 'none');
     $('#CancelButton').css('display', 'block');
     $('#BackButton').css('display', 'none');
+
+    $('#deleteButton').css('display', 'none');
+
 }
 
 //function to confirm the changes
@@ -82,6 +92,30 @@ function confirmEdit() {
 function CancelEdit() {
     startReadOnly();
     searchPoll(currentPollid);
+}
+
+function deletePoll() {
+    var result = confirm("Are you sure to delete this poll?");
+    if (result == true) {
+        $.ajax({
+            url: "../phps/deletepoll.php",
+            type: 'post',
+            data: {
+                pollid: currentPollid
+            },
+            success: function (data) {
+                //refresh the page
+                console.log(data);
+                if (data == 'ok') {
+                    //redirection
+                    window.location.href = 'index.php';
+                } else {
+                    alert('Delete poll failed');
+                }
+                
+            }
+        });
+    }
 }
 
 //function to go back to the index page

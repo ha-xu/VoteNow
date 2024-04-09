@@ -176,6 +176,8 @@ session_start();
 
                 </div>
                 <div id="buttonsDiv">
+                    <a id="deleteButton" onclick="deletePoll()" class="pollSubmitButtons">Delete Poll</a>
+
                     <a id="BackButton" onclick="BackList()" class="pollSubmitButtons">Back to list</a>
                     <a id="CancelButton" onclick="CancelEdit()" class="pollSubmitButtons">Cancel</a>
                     <a id="ConfirmButton" onclick="confirmEdit()" class="pollSubmitButtons">Restart</a>

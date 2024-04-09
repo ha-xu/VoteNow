@@ -276,6 +276,14 @@ input[type="radio"] {
     justify-content: center;
     align-items: center;
 }
+
+#deleteButton{
+    background-color: #fa5d5d;
+}
+
+#deleteButton:hover{
+    background-color: #c44c4c;
+}
  
 #CancelButton{
     display: none;
