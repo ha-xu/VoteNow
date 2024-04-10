@@ -44,7 +44,7 @@ function ClearRegisterForm() {
 }
 
 
-
+//ajax function , on essaie de se connecter, on envoie les données au serveur
 function TryLogin() {
     var username = document.getElementById('loginUserName').value;
     var password = document.getElementById('loginPassword').value;
@@ -83,6 +83,7 @@ function TryLogin() {
 
 }
 
+//ajax function , on essaie de s'inscrire, on envoie les données au serveur
 function TryRegister() {
     var username = document.getElementById('regUserName').value;
     var email = document.getElementById('regEmail').value;

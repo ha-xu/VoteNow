@@ -30,9 +30,7 @@ if(count($myPolls) == 0){
     return;
 }
 
-//reverse the array to show the latest poll first
-// $myPolls = array_reverse($myPolls);
-
+//ici on va afficher les scrutins créés par l'utilisateur
 foreach($myPolls as $poll){
         echo "<a  class='CreatedPoll' href='createpoll.php?pollid=".$poll['uuid']."'>"; 
         echo "<h2>".$poll['polltitle']."</h2>";

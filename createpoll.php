@@ -74,20 +74,7 @@ session_start();
                     <textarea id="polldesc" type="text" rows="3" name="polldesc"
                         placeholder="Enter your description here"></textarea>
                 </div>
-                <!-- <div class='InputLine'>
-                    <h2>Ways of vote</h2>
 
-                    <div class="radioButtons">
-                        <div class="radioBlock">
-                            <input type="radio" id="identified" name="waysOfVote" value="identified" checked>
-                            <label class="radioLabel" for="identified">Identified</label>
-                        </div>
-                        <div class="radioBlock">
-                            <input type="radio" id="anonymous" name="waysOfVote" value="anonymous">
-                            <label class="radioLabel" for="anonymous">Anonymous</label>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="QuestionBlock">
                     <div class='InputLine multilines'>
                         <h2>Question of the Poll</h2>
@@ -131,12 +118,7 @@ session_start();
                 </div>
 
                 <div id="VotersBlock">
-                    <!-- <div id="introduction">
-                        <h1>Voters</h1>
-                        <p>
-                            You can add voters to your poll. You can add them by their email.
-                        </p>
-                    </div> -->
+
                     <div class="Indicator">
                         <h2>Voters</h2>
                         <a class="buttons addButton" onclick="addVoter()">

@@ -49,9 +49,13 @@ if (count($myvotepollsInfo) == 0) {
     return;
 }
 
-//reverse the array to show the latest poll first
-// $myvotepollsInfo = array_reverse($myvotepollsInfo);
 
+
+//ici on va afficher les scrutins auxquels l'utilisateur a été invité
+//pour chaque scrutin, on va afficher les informations du scrutin
+//et les candidats avec les votes
+//et les boutons pour voter
+//et les boutons pour confirmer le vote
 foreach ($myvotepollsInfo as $PollInfo) {
     $poll = $PollInfo["poll"];
     $currentVote = $PollInfo["voter"];

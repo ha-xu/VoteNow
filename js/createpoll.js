@@ -4,9 +4,12 @@ var pollfinished = false;
 
 $(document).ready(function () {
 
+
     document.getElementById('sidebarBack').addEventListener('click', hideSidebar);
 
-
+    //je veux obtenir le pollid dans l'url
+    //si on n'a pas de pollid, on est en mode création
+    //si on a un pollid, on est en mode édition
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const pollid = urlParams.get('pollid');
@@ -96,6 +99,8 @@ function CancelEdit() {
     searchPoll(currentPollid);
 }
 
+//function to delete the poll
+//appelée lorsqu'on clique sur le bouton delete
 function deletePoll() {
     var result = confirm("Are you sure to delete this poll?");
     if (result == true) {
@@ -188,7 +193,8 @@ function applyEdit() {
     });
 }
 
-
+//function pour afficher les résultats du scrutin
+//appelée lorsqu'on clique sur le bouton show result
 function ShowResult() {
     //confirm box
 

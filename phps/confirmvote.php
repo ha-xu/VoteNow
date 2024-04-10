@@ -4,6 +4,7 @@
 //get current user
 session_start();
 
+//une fonction pour obtenir l'email d'un utilisateur par son nom d'utilisateur
 function getemailbyusername($username){
     $usersfile = file_get_contents("../data/users.json");
     $users = json_decode($usersfile, true);
@@ -28,6 +29,8 @@ $voteInfo = $_POST['voteInfo'];
 $pollsfile = file_get_contents("../data/polls.json");
 $polls = json_decode($pollsfile,true);
 
+//ici on va mettre à jour le fichier JSON des sondages
+//pour chaque vote, on va incrémenter le nombre de votes du candidat correspondant
 if(count($voteInfo) > 0){
     if($polls != null){
         foreach($polls as &$poll){

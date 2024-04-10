@@ -1,4 +1,5 @@
 var candidatesInfo = [];
+//pour register les candidats votés
 function voteFor(uuid, candidate) {
     var voteTimeLeft = parseInt($("#" + uuid + " .PollTimesBlock p").html());
 
@@ -16,6 +17,7 @@ function voteFor(uuid, candidate) {
     }
 }
 
+//pour annuler le vote, on enlève le candidat de la liste des candidats votés
 function restartVote(uuid, totalvotetimeleft) {
     var restartVote = confirm("Are you sure you want to restart the vote?\nAll votes will be lost.");
     if (restartVote == true) {
@@ -34,6 +36,8 @@ function restartVote(uuid, totalvotetimeleft) {
     }
 }
 
+//pour confirmer le vote, on envoie les candidats votés au serveur
+//utiliser ajax pour envoyer les données au serveur
 function confirmVote(uuid, totalvotetimeleft) {
 
     var currentVoteInfo = [];

@@ -30,9 +30,6 @@ session_start();
             if (isset($_SESSION['username'])) {
                 echo "<p id='usernamep'>" . $_SESSION['username'] . "</p>";
             }
-            // else {
-            //     echo "<script>location.href='index.php'</script>";
-            // }
             ?>
         </a>
 
@@ -59,35 +56,15 @@ session_start();
                 <h2>Polls created by me</h1>
             </div>
             <div id="createdPolls" class="PollsList">
-                <!-- <div class="CreatedPoll">
-                <h2>What is your favorite color?</h2>
-                <h3>26/03/2024</h3>
-                <h4>In progress</h4>
-            </div> -->
+                <!-- ici on va afficher les scrutins créés par l'utilisateur -->
+                <!-- on va utilise le code php pour afficher les scrutins créés par l'utilisateur -->
             </div>
             <div class="Indicator">
                 <h2>Polls to vote</h1>
             </div>
             <div id="pollsToVote" class="PollsList">
-                <!-- <div class="PollToVote">
-                    <h2>What is your favorite color?</h2>
-                    <h4>In progress</h4>
-
-                    <h3>start since: 26/03/2024</h3>
-                    <div class="PollTimesBlock">
-                        <h3>Vote time left:</h3>
-                        <p>3</p>
-                    </div>
-                    <div class="PollQuestionBlock">
-                        <h3>Voter for the cleverest person in the fucking world</h3>
-                        <a>Albert Einstein</a>
-                        <a>Zihan XU</a>
-                    </div>
-                    <div class="PollButtonsBlock">
-                        <a id="restartbutton">Restart vote</a>
-                        <a id="confirmbutton">Confirm vote</a>
-                    </div>
-                </div> -->
+                <!-- ici on va afficher les scrutins auxquels l'utilisateur a été invité -->
+                <!-- on va utilise le code php pour afficher les scrutins auxquels l'utilisateur a été invité -->
             </div>
 </body>
 

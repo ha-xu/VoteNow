@@ -1,8 +1,7 @@
-//window laod event
-window.onload = function() {
-    //add event listener to the sidebarback
 
-}
+
+//les fonctions de la barre de navigation
+
 
 function showSidebar() {
     document.getElementById('sidebarBack').style.opacity = 1;
@@ -25,6 +24,7 @@ function hideSidebar() {
     document.getElementById('sidebar').style.pointerEvents = 'none';
 }
 
+//quand on clique sur le bouton de logout
 function logout() {
     //clear the local storage
     localStorage.clear();

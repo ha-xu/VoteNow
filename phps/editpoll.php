@@ -14,6 +14,7 @@
         return;
     }
 
+    //ici on va mettre à jour le scrutin avec les nouvelles informations
     foreach ($polls as &$poll){
         if($poll['uuid'] == $pollid){
 
